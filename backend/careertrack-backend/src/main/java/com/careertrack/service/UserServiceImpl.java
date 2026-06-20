@@ -17,10 +17,10 @@ public class UserServiceImpl implements UserService {
 //Implementa la interfaz UserService utilizando UserRepository para interactuar con la DB.
 
     private final UserRepository userRepository;
-    
+  //Inyección de Dependencia.
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-    }//Inyección de Dependencia por constructor.
+    }
 
     @Override
     public User saveUser(User user) {
@@ -53,8 +53,8 @@ public class UserServiceImpl implements UserService {
     }
     
     @Override
-    public UserResponse register(UserRegisterRequest request) {//Método para registrar un nuevo Usuario.
-        
+    public UserResponse register(UserRegisterRequest request) {
+        //Método para registrar un nuevo Usuario. Verifica si el email ya existe, si no, crea un Nuevo.
     	if (userRepository.existsByEmail(request.getEmail())) {//Verifica si el email ya existe en la DB.
             throw new EmailAlreadyExistsException("Email already exists");
         }
@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
                 .build();
 
         User savedUser = userRepository.save(user);
-
+        //Devuelve un DTO con la información del Usuario registrado.
         return UserResponse.builder()
                 .id(savedUser.getId())
                 .name(savedUser.getName())

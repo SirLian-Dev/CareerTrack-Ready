@@ -15,14 +15,13 @@ import jakarta.validation.Valid;
 public class AuthController {
 
     private final UserService userService;
-
+    //Inyección de dependencia.
     public AuthController(UserService userService) {
         this.userService = userService;
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(
-        @Valid @RequestBody UserRegisterRequest request) {
+    public ResponseEntity<UserResponse> register( @Valid @RequestBody UserRegisterRequest request) {
     	//Método para manejar la solicitud de registro de un nuevo Usuario.
         UserResponse response = userService.register(request);
 
