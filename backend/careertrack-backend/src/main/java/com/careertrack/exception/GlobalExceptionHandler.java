@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 //Controlador de excepciones global para manejar los errores de la aplicación.
 	
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse>handleResourceNotFound(ResourceNotFoundException ex) {
+    public ResponseEntity<ErrorResponse>handleResourceNotFound(ResourceNotFoundException ex){
     	//Metodo para excepción de recurso no encontrado que construye una respuesta de error con detalles.
         ErrorResponse response = ErrorResponse.builder()
                         .timestamp(LocalDateTime.now())
@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(EmailAlreadyExistsException.class)
-    public ResponseEntity<ErrorResponse>handleEmailAlreadyExists(EmailAlreadyExistsException ex) {
+    public ResponseEntity<ErrorResponse>handleEmailAlreadyExists(EmailAlreadyExistsException ex){
     	//Metodo para excepción de email ya existente que construye una respuesta de error con detalles.
         ErrorResponse response = ErrorResponse.builder()
                         .timestamp(LocalDateTime.now())
@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String, String>> handleValidationErrors(MethodArgumentNotValidException ex) {
+    public ResponseEntity<Map<String, String>> handleValidationErrors(MethodArgumentNotValidException ex){
     	//Método que captura errores de validación de DTOs.
         Map<String, String> errors = new HashMap<>();
 
@@ -58,7 +58,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(InvalidCredentialsException.class)
-    public ResponseEntity<ErrorResponse>handleInvalidCredentials(InvalidCredentialsException ex) {
+    public ResponseEntity<ErrorResponse>handleInvalidCredentials(InvalidCredentialsException ex){
     	//Método para excepción de credenciales inválidas.
         ErrorResponse response = ErrorResponse.builder()
                         .timestamp(LocalDateTime.now())
