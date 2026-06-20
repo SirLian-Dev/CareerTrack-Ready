@@ -12,7 +12,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-//Controlador de excepciones global para manejar errores comunes en la aplicación.
+//Controlador de excepciones global para manejar los errores de la aplicación.
 	
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponse>handleResourceNotFound(ResourceNotFoundException ex) {
@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationErrors(MethodArgumentNotValidException ex) {
-    	//Método que captura errores de validación de DTOs
+    	//Método que captura errores de validación de DTOs.
         Map<String, String> errors = new HashMap<>();
 
         ex.getBindingResult()
@@ -56,4 +56,19 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.badRequest().body(errors);
     }
+
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<ErrorResponse>handleInvalidCredentials(InvalidCredentialsException ex) {
+    	//Método para excepción de credenciales inválidas.
+        ErrorResponse response = ErrorResponse.builder()
+                        .timestamp(LocalDateTime.now())
+                        .status(HttpStatus.UNAUTHORIZED.value())
+                        .message(ex.getMessage())
+                        .build();
+
+        return ResponseEntity
+                .status(HttpStatus.UNAUTHORIZED)
+                .body(response);
+    }
+    
 }
