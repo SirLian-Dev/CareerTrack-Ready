@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.time.LocalDateTime;
 
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.careertrack.entity.User;
 import com.careertrack.repository.UserRepository;
@@ -17,9 +18,11 @@ public class UserServiceImpl implements UserService {
 //Implementa la interfaz UserService utilizando UserRepository para interactuar con la DB.
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
   //Inyección de Dependencia.
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -62,7 +65,7 @@ public class UserServiceImpl implements UserService {
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
-                .password(request.getPassword())
+                .password(passwordEncoder.encode(request.getPassword()))
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();
