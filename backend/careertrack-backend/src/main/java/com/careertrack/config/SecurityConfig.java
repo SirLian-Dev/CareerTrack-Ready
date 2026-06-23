@@ -1,4 +1,4 @@
-package com.careertrack.security;
+package com.careertrack.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
