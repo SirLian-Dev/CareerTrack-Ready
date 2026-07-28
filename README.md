@@ -1,32 +1,51 @@
-# 🚀 CareerTrack
+# 🚀 CareerTrack Ready
 
-> Track your job search. Stay organized. Get hired.
+> The first product of the CareerTrack ecosystem.
 
-CareerTrack is an application designed to help job seekers organize, monitor and optimize their job search process.
+CareerTrack Ready is a web platform designed to help professionals organize, monitor and improve their job search through a centralized dashboard.
 
-Instead of keeping applications in spreadsheets or scattered notes, CareerTrack centralizes everything into one platform, allowing users to manage applications, monitor their progress and analyze their job search with useful statistics.
+Instead of tracking applications in spreadsheets or scattered notes, CareerTrack Ready provides a structured workflow to manage job opportunities, companies, interviews and career progress.
+
+This repository contains the **official backend** of CareerTrack Ready.
 
 ---
 
-## 🎯 Project Vision
+# 🌍 About CareerTrack
 
-CareerTrack is being developed as a real software product following professional software engineering practices.
+CareerTrack is an ecosystem of software products focused on helping professionals throughout their career journey.
 
-The goal is not only to build a functional application, but also to demonstrate:
+CareerTrack Ready is the first product released under the CareerTrack vision.
+
+Future products may include:
+
+- CV
+- Portfolio
+- Apply
+- Interview
+- Analytics
+
+---
+
+# 🎯 Project Mission
+
+CareerTrack Ready aims to simplify and organize the job search process while serving as a production-quality software project built using modern software engineering practices.
+
+The project emphasizes:
 
 - Clean Architecture
 - SOLID Principles
-- REST API Design
+- RESTful API Design
 - Secure Authentication (JWT)
 - Database Design
-- Git Workflow
+- Documentation First
+- AI-Assisted Development
 - Agile Development
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Technology Stack
 
-### Backend
+## Backend
 
 - Java 21
 - Spring Boot
@@ -35,13 +54,13 @@ The goal is not only to build a functional application, but also to demonstrate:
 - PostgreSQL
 - Maven
 - Lombok
-- JWT Authentication (In Progress)
+- JWT Authentication
 
-### Database
+## Database
 
 - PostgreSQL
 
-### Development Tools
+## Development Tools
 
 - Eclipse IDE
 - pgAdmin 4
@@ -50,11 +69,11 @@ The goal is not only to build a functional application, but also to demonstrate:
 
 ---
 
-## 📁 Project Structure
+# 📂 Repository Structure
 
 ```
-careertrack/
-│
+CareerTrack-Ready/
+
 ├── backend/
 │
 ├── docs/
@@ -63,74 +82,115 @@ careertrack/
 │   ├── architecture.md
 │   ├── roadmap.md
 │   ├── api-design.md
-│   └── database-design.md
+│   ├── database-design.md
+│   ├── AI_CONTEXT.md
+│   ├── PROJECT_STATE.md
+│   ├── CURRENT_STATUS.md
+│   ├── MIGRATION.md
+│   └── CHANGELOG.md
 │
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## 📌 Current Status
+# 🚧 Current Development Status
 
-Current Version:
+Current Version
 
-**v0.2 - Authentication Module**
+```
+v0.2.0
+```
 
-Completed:
+Current Milestone
 
-- ✅ User registration
-- ✅ PostgreSQL integration
-- ✅ Spring Data JPA
-- ✅ Password encryption (BCrypt)
-- ✅ Global exception handling
-- ✅ Authentication service
+```
+Authentication Infrastructure
+```
+
+Completed
+
+- ✅ User Entity
+- ✅ User Repository
+- ✅ User Service
+- ✅ PostgreSQL Integration
+- ✅ DTO Layer
+- ✅ Global Exception Handling
+- ✅ Password Encryption (BCrypt)
 - ✅ JWT Service
+- ✅ Authentication Service
+- ✅ CustomUserDetailsService
 
-In Progress:
+Currently Developing
 
 - 🚧 JWT Authentication Filter
 - 🚧 Security Configuration
-- 🚧 Protected Endpoints
+- 🚧 Protected REST Endpoints
 
-Planned:
+Next Features
 
+- Job Applications
+- Companies
 - Dashboard
-- Job Application Management
-- Company Management
 - Statistics
 - Notifications
-- Resume Tracking
 
 ---
 
-## 📚 Documentation
+# 📚 Documentation
 
-Project documentation is available inside the **docs** folder.
+Every important decision is documented.
+
+The `docs/` directory contains the project's technical documentation.
+
+Current documents include:
 
 - Vision
 - Requirements
 - Architecture
-- Database Design
 - API Design
+- Database Design
 - Roadmap
+- Migration History
+- AI Development Context
+- Current Project Status
+- Changelog
 
 ---
 
-## ▶ Running the project
+# 🤖 AI-Assisted Development
 
-Clone the repository:
+CareerTrack Ready is intentionally designed to be developed alongside AI coding assistants.
+
+The repository contains dedicated documentation so AI agents can understand:
+
+- Project architecture
+- Coding standards
+- Development philosophy
+- Current progress
+- Pending tasks
+- Technical decisions
+
+This allows development continuity regardless of the AI assistant being used.
+
+---
+
+# ▶ Running the Project
+
+Clone the repository
 
 ```bash
-git clone https://github.com/your-username/CareerTrack.git
+git clone https://github.com/SirLian-Dev/CareerTrack-Ready.git
 ```
 
-Enter backend:
+Go to backend
 
 ```bash
 cd backend/careertrack-backend
 ```
 
-Run:
+Run
 
 ```bash
 mvn spring-boot:run
@@ -138,42 +198,56 @@ mvn spring-boot:run
 
 ---
 
-## 🌱 Development Philosophy
-
-CareerTrack is built incrementally.
-
-Each feature is designed, documented, implemented and versioned before moving to the next milestone.
-
-The project follows a roadmap instead of developing features without planning.
-
----
-
-## 📈 Roadmap
-
-Current milestone:
+# 📈 Development Roadmap
 
 ```
-Authentication ✅
-        ↓
+Infrastructure
+        │
+        ▼
+Authentication
+        │
+        ▼
+Job Applications
+        │
+        ▼
+Companies
+        │
+        ▼
 Dashboard
-        ↓
-Applications
-        ↓
+        │
+        ▼
 Analytics
-        ↓
-Production Release
+        │
+        ▼
+MVP Release
 ```
 
 ---
 
-## 🤝 Contributions
+# 🤝 Contributing
 
-At the moment this project is under active development.
+CareerTrack Ready is currently under active development.
 
-Feedback and suggestions are always welcome.
+Before contributing, please read:
+
+- CONTRIBUTING.md
+- AI_CONTEXT.md
+- PROJECT_STATE.md
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project is currently released for educational and portfolio purposes.
+This repository is currently intended for educational, portfolio and product development purposes.
+
+License details may change before the first public production release.
+
+---
+
+# ⭐ Project Philosophy
+
+CareerTrack Ready is not built as a tutorial project.
+
+It is developed as a real software product, following professional engineering practices, documentation-first development and incremental delivery.
+
+Every feature is designed, documented, implemented and tested before becoming part of the product.
