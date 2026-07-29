@@ -36,7 +36,7 @@ public class AuthenticationService {
             throw new InvalidCredentialsException("Invalid credentials");
         }
 
-        // Genera token JWT
+        // Genera token JWT para posteriormente devolverlo al frontend.
         String token = jwtService.generateToken(user.getEmail());
 
         return LoginResponse.builder().token(token).build();

@@ -1,4 +1,4 @@
-package com.careertrack.security;
+package com.careertrack.security.userDetails;
 
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,6 @@ public class CustomUserDetailsService
 
     @Override
     public UserDetails loadUserByUsername(String email)throws UsernameNotFoundException {
-
         // Spring Security utilizará el email para buscar usuarios
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
