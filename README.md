@@ -1,253 +1,212 @@
 # 🚀 CareerTrack Ready
 
-> The first product of the CareerTrack ecosystem.
-
-CareerTrack Ready is a web platform designed to help professionals organize, monitor and improve their job search through a centralized dashboard.
-
-Instead of tracking applications in spreadsheets or scattered notes, CareerTrack Ready provides a structured workflow to manage job opportunities, companies, interviews and career progress.
-
-This repository contains the **official backend** of CareerTrack Ready.
+> **CareerTrack Ready** es el primer producto oficial del ecosistema **CareerTrack**.
+>
+> Su objetivo es ayudar a desarrolladores junior y profesionales en crecimiento a comprender cómo mejorar su perfil para una vacante específica mediante un análisis honesto, claro y accionable.
 
 ---
 
-# 🌍 About CareerTrack
+# 📖 Acerca del proyecto
 
-CareerTrack is an ecosystem of software products focused on helping professionals throughout their career journey.
+Buscar empleo debería ser un proceso basado en el talento y la preparación, no únicamente en la suerte o en conocer a la persona correcta.
 
-CareerTrack Ready is the first product released under the CareerTrack vision.
+CareerTrack Ready nace para ofrecer una herramienta que ayude a responder una de las preguntas más importantes durante una búsqueda laboral:
 
-Future products may include:
+> **¿Qué necesito mejorar para aumentar mis posibilidades de conseguir una entrevista para esta vacante?**
 
-- CV
-- Portfolio
-- Apply
-- Interview
-- Analytics
+El proyecto no pretende reemplazar el criterio humano ni prometer resultados imposibles.
+
+Su propósito es proporcionar información útil que permita al usuario tomar mejores decisiones durante su proceso profesional.
 
 ---
 
-# 🎯 Project Mission
+# 🎯 Objetivo
 
-CareerTrack Ready aims to simplify and organize the job search process while serving as a production-quality software project built using modern software engineering practices.
-
-The project emphasizes:
-
-- Clean Architecture
-- SOLID Principles
-- RESTful API Design
-- Secure Authentication (JWT)
-- Database Design
-- Documentation First
-- AI-Assisted Development
-- Agile Development
+Permitir que cualquier desarrollador pueda comparar su perfil con una oferta laboral y recibir un análisis estructurado que le ayude a identificar fortalezas, debilidades y oportunidades de mejora.
 
 ---
 
-# 🛠 Technology Stack
+# 💡 Problema que buscamos resolver
 
-## Backend
+Miles de desarrolladores envían decenas o incluso cientos de solicitudes de empleo sin recibir respuestas.
 
-- Java 21
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- PostgreSQL
-- Maven
-- Lombok
-- JWT Authentication
+En muchos casos el problema no es únicamente la experiencia técnica.
 
-## Database
+También influye:
 
-- PostgreSQL
+* La forma en que presentan sus conocimientos.
+* La organización del CV.
+* La ausencia de palabras clave relevantes.
+* La dificultad para identificar qué habilidades son realmente importantes para una vacante.
 
-## Development Tools
-
-- Eclipse IDE
-- pgAdmin 4
-- Git
-- GitHub
+CareerTrack Ready busca reducir esa incertidumbre.
 
 ---
 
-# 📂 Repository Structure
+# 🏗️ Nuestra propuesta
 
-```
-CareerTrack-Ready/
+El usuario podrá:
 
-├── backend/
+* Subir su hoja de vida.
+* Compartir la descripción de una vacante.
+* Obtener un análisis comparativo.
+* Conocer sus fortalezas.
+* Identificar las habilidades que debería fortalecer.
+* Recibir recomendaciones claras para mejorar su candidatura.
+* Obtener un **CareerTrack Score**, una evaluación diseñada para mostrar el nivel de preparación frente a una vacante específica.
+
+El objetivo no es decirle al usuario si conseguirá el empleo.
+
+El objetivo es ayudarle a prepararse mejor.
+
+---
+
+# ❤️ Filosofía del producto
+
+CareerTrack Ready fue construido siguiendo los principios de **CareerTrack Foundation**.
+
+Creemos que:
+
+* Las herramientas deben impulsar el crecimiento profesional.
+* La honestidad genera más valor que las falsas promesas.
+* La IA debe asistir al usuario, no reemplazar su criterio.
+* Un buen producto ofrece claridad antes que complejidad.
+* El aprendizaje continuo es más importante que aparentar experiencia.
+
+---
+
+# 🚫 Lo que este proyecto NO hace
+
+CareerTrack Ready no:
+
+* Garantiza conseguir empleo.
+* Promete entrevistas.
+* Inventa experiencia laboral.
+* Genera información falsa.
+* Manipula procesos de selección.
+* Busca engañar sistemas ATS.
+* Sustituye el juicio de un reclutador.
+
+Nuestro compromiso es construir herramientas éticas y útiles.
+
+---
+
+# 👤 Público objetivo
+
+Actualmente el producto está dirigido principalmente a:
+
+* Desarrolladores Junior.
+* Desarrolladores Trainee.
+* Personas autodidactas.
+* Estudiantes de programación.
+* Profesionales que desean ingresar a la industria del software.
+
+En futuras versiones el ecosistema CareerTrack podrá expandirse hacia otros perfiles profesionales.
+
+---
+
+# 🚀 Estado del proyecto
+
+**Etapa actual**
+
+> 🟡 Diseño y planificación del MVP.
+
+Actualmente se está construyendo la primera versión del producto siguiendo una metodología de desarrollo asistida por Inteligencia Artificial.
+
+---
+
+# 📂 Estructura del repositorio
+
+```text
+careertrack-ready/
+
+├── Docs/
+│   ├── Blueprint/
+│   ├── Decisions/
+│   └── Research/
 │
-├── docs/
-│   ├── vision.md
-│   ├── requirements.md
-│   ├── architecture.md
-│   ├── roadmap.md
-│   ├── api-design.md
-│   ├── database-design.md
-│   ├── AI_CONTEXT.md
-│   ├── PROJECT_STATE.md
-│   ├── CURRENT_STATUS.md
-│   ├── MIGRATION.md
-│   └── CHANGELOG.md
+├── AI/
+│   ├── MISSION.md
+│   ├── PRODUCT_RULES.md
+│   ├── CODING_RULES.md
+│   ├── ARCHITECTURE.md
+│   └── DEFINITION_OF_DONE.md
 │
-├── README.md
-└── LICENSE
+├── Backend/
+│
+├── Frontend/
+│
+├── Infrastructure/
+│
+└── README.md
 ```
+
+La documentación evoluciona junto con el producto y sirve como contexto para desarrolladores y agentes de IA.
 
 ---
 
-# 🚧 Current Development Status
+# 🧠 Desarrollo impulsado por IA
 
-Current Version
+CareerTrack Ready se desarrolla utilizando una metodología basada en documentación previa y colaboración entre desarrolladores y agentes de Inteligencia Artificial.
 
-```
-v0.2.0
-```
+Antes de escribir código se definen:
 
-Current Milestone
+* La visión del producto.
+* El problema que resuelve.
+* El usuario objetivo.
+* El alcance del MVP.
+* Las reglas de arquitectura.
+* Los principios de desarrollo.
 
-```
-Authentication Infrastructure
-```
-
-Completed
-
-- ✅ User Entity
-- ✅ User Repository
-- ✅ User Service
-- ✅ PostgreSQL Integration
-- ✅ DTO Layer
-- ✅ Global Exception Handling
-- ✅ Password Encryption (BCrypt)
-- ✅ JWT Service
-- ✅ Authentication Service
-- ✅ CustomUserDetailsService
-
-Currently Developing
-
-- 🚧 JWT Authentication Filter
-- 🚧 Security Configuration
-- 🚧 Protected REST Endpoints
-
-Next Features
-
-- Job Applications
-- Companies
-- Dashboard
-- Statistics
-- Notifications
+El código es una consecuencia de las decisiones, no el punto de partida.
 
 ---
 
-# 📚 Documentation
+# 🛣️ Roadmap inicial
 
-Every important decision is documented.
+## Fase 1
 
-The `docs/` directory contains the project's technical documentation.
+* Definición del Blueprint.
+* Arquitectura del sistema.
+* Desarrollo del MVP.
 
-Current documents include:
+## Fase 2
 
-- Vision
-- Requirements
-- Architecture
-- API Design
-- Database Design
-- Roadmap
-- Migration History
-- AI Development Context
-- Current Project Status
-- Changelog
+* Registro e inicio de sesión.
+* Análisis de CV.
+* Comparación con vacantes.
+* CareerTrack Score.
+* Plan de mejora.
 
----
+## Fase 3
 
-# 🤖 AI-Assisted Development
-
-CareerTrack Ready is intentionally designed to be developed alongside AI coding assistants.
-
-The repository contains dedicated documentation so AI agents can understand:
-
-- Project architecture
-- Coding standards
-- Development philosophy
-- Current progress
-- Pending tasks
-- Technical decisions
-
-This allows development continuity regardless of the AI assistant being used.
+* Historial de análisis.
+* Exportación de resultados.
+* Funcionalidades Premium.
 
 ---
 
-# ▶ Running the Project
+# 🤝 Contribuciones
 
-Clone the repository
+Actualmente el proyecto se encuentra en desarrollo activo.
 
-```bash
-git clone https://github.com/SirLian-Dev/CareerTrack-Ready.git
-```
-
-Go to backend
-
-```bash
-cd backend/careertrack-backend
-```
-
-Run
-
-```bash
-mvn spring-boot:run
-```
+Las contribuciones serán bienvenidas cuando la primera versión del producto alcance un estado estable.
 
 ---
 
-# 📈 Development Roadmap
+# 📄 Licencia
 
-```
-Infrastructure
-        │
-        ▼
-Authentication
-        │
-        ▼
-Job Applications
-        │
-        ▼
-Companies
-        │
-        ▼
-Dashboard
-        │
-        ▼
-Analytics
-        │
-        ▼
-MVP Release
-```
+La licencia del proyecto será definida antes de la publicación oficial de la primera versión.
 
 ---
 
-# 🤝 Contributing
+# 🌐 Ecosistema CareerTrack
 
-CareerTrack Ready is currently under active development.
+CareerTrack Ready es el primer paso de un ecosistema enfocado en crear herramientas que impulsen el crecimiento profesional.
 
-Before contributing, please read:
-
-- CONTRIBUTING.md
-- AI_CONTEXT.md
-- PROJECT_STATE.md
+Este proyecto sigue los principios establecidos en **CareerTrack Foundation**, donde se define la visión, filosofía y dirección estratégica de la marca.
 
 ---
 
-# 📄 License
+> **"CareerTrack nació para que cada persona tenga una oportunidad justa de construir la vida profesional que desea."**
 
-This repository is currently intended for educational, portfolio and product development purposes.
-
-License details may change before the first public production release.
-
----
-
-# ⭐ Project Philosophy
-
-CareerTrack Ready is not built as a tutorial project.
-
-It is developed as a real software product, following professional engineering practices, documentation-first development and incremental delivery.
-
-Every feature is designed, documented, implemented and tested before becoming part of the product.
