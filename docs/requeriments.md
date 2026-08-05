@@ -1,658 +1,253 @@
-\# CareerTrack - Requirements Specification
+# 📋 requirements.md
 
+> **Especificación oficial de requisitos de CareerTrack Ready**
+>
+> Este documento describe el comportamiento esperado del sistema, sus funcionalidades principales y los requisitos que deberán cumplirse durante el desarrollo del producto.
+>
+> Todos los cambios funcionales deberán reflejarse en este documento.
 
+---
 
-\## Document Information
+# 1. Objetivo
 
+CareerTrack Ready tiene como objetivo ayudar a desarrolladores junior y profesionales en crecimiento a comprender qué tan preparados están para una oportunidad laboral y qué acciones pueden tomar para mejorar su perfil profesional.
 
+El sistema deberá proporcionar análisis claros, recomendaciones accionables y un seguimiento del progreso del usuario.
 
-| Field        | Value            |
+---
 
-| ------------ | ---------------- |
+# 2. Alcance del MVP
 
-| Project      | CareerTrack      |
+La primera versión del producto estará enfocada exclusivamente en el análisis del perfil profesional.
 
-| Version      | 0.1              |
+El MVP permitirá que un usuario pueda:
 
-| Status       | Draft            |
+- Registrarse.
+- Iniciar sesión.
+- Gestionar su perfil profesional.
+- Analizar una vacante.
+- Obtener un informe de compatibilidad.
+- Recibir recomendaciones personalizadas.
+- Consultar su historial de análisis.
 
-| Author       | CareerTrack Team |
+Todo aquello que no aporte valor directo a estas funcionalidades quedará fuera del alcance del MVP.
 
-| Last Updated | June 2026        |
+---
 
+# 3. Actores del sistema
 
+## Usuario
 
-\---
+Persona que utiliza CareerTrack Ready para analizar su perfil profesional y recibir recomendaciones.
 
+---
 
+## Sistema
 
-\# 1. Introduction
+Backend encargado de procesar la información, comparar perfiles, almacenar datos y generar resultados.
 
+---
 
+# 4. Requisitos funcionales
 
-\## 1.1 Purpose
+## RF-001 Registro de usuarios
 
+El sistema deberá permitir que un usuario cree una cuenta utilizando:
 
+- Nombre
+- Correo electrónico
+- Contraseña
 
-This document defines the functional and non-functional requirements for the CareerTrack platform.
+El correo deberá ser único.
 
+Las contraseñas deberán almacenarse cifradas mediante BCrypt.
 
+---
 
-CareerTrack is designed to help job seekers organize and monitor their job search process through a centralized dashboard.
+## RF-002 Autenticación
 
+El sistema deberá permitir que un usuario inicie sesión utilizando sus credenciales.
 
+La autenticación utilizará JWT.
 
-The goal of the MVP is to provide a simple, reliable, and efficient solution for tracking job applications.
+Solo los usuarios autenticados podrán acceder a los recursos protegidos.
 
+---
 
+## RF-003 Gestión del perfil
 
-\---
+El usuario podrá:
 
+- Actualizar información personal.
+- Agregar experiencia.
+- Registrar tecnologías conocidas.
+- Registrar habilidades.
+- Indicar nivel de experiencia.
+- Agregar enlaces relevantes (GitHub, LinkedIn, Portafolio).
 
+---
 
-\## 1.2 Project Scope
+## RF-004 Gestión de vacantes
 
+El usuario podrá registrar una vacante mediante:
 
+- URL
+- Texto completo
+- Información manual
 
-The MVP will focus exclusively on:
+El sistema almacenará la información para futuras consultas.
 
+---
 
+## RF-005 Comparación de perfiles
 
-\* User registration
+El sistema deberá comparar:
 
-\* User authentication
+- Habilidades requeridas.
+- Tecnologías.
+- Nivel de experiencia.
+- Competencias.
 
-\* Job application management
+El resultado será un análisis estructurado.
 
-\* Application status tracking
+---
 
-\* Dashboard statistics
+## RF-006 Informe de resultados
 
+Después del análisis el sistema deberá mostrar:
 
+- Compatibilidad general.
+- Fortalezas.
+- Debilidades.
+- Tecnologías faltantes.
+- Prioridad de aprendizaje.
+- Recomendaciones.
 
-Features such as AI integration, resume generation, interview preparation, notifications, and mobile applications are explicitly excluded from the MVP.
+---
 
+## RF-007 Historial
 
+El usuario podrá consultar todos los análisis realizados anteriormente.
 
-\---
+---
 
+# 5. Requisitos no funcionales
 
+## RNF-001 Rendimiento
 
-\# 2. User Roles
+Las respuestas del backend deberán mantenerse rápidas incluso con un crecimiento moderado del número de usuarios.
 
+---
 
+## RNF-002 Seguridad
 
-\## 2.1 Standard User
+El sistema deberá proteger:
 
+- Credenciales.
+- Tokens.
+- Información personal.
 
+---
 
-A standard user can:
+## RNF-003 Escalabilidad
 
+La arquitectura deberá permitir incorporar nuevos módulos sin modificar la base existente.
 
+---
 
-\* Register an account
+## RNF-004 Mantenibilidad
 
-\* Authenticate into the system
+El código deberá seguir una arquitectura organizada y facilitar futuras modificaciones.
 
-\* Manage personal job applications
+---
 
-\* View statistics related to their job search
+## RNF-005 Documentación
 
+Toda funcionalidad implementada deberá estar documentada.
 
+---
 
-\---
+# 6. Reglas de negocio
 
+## RB-001
 
+Cada correo electrónico será único.
 
-\# 3. Functional Requirements
+---
 
+## RB-002
 
+Solo usuarios autenticados podrán acceder a su información.
 
-\## FR-001 User Registration
+---
 
+## RB-003
 
+Cada análisis pertenecerá únicamente al usuario que lo creó.
 
-The system shall allow a new user to create an account.
+---
 
+## RB-004
 
+Las recomendaciones deberán generarse a partir de la comparación entre el perfil del usuario y la vacante analizada.
 
-Acceptance Criteria:
+---
 
+## RB-005
 
+El historial conservará todos los análisis realizados, salvo eliminación explícita por parte del usuario.
 
-\* User provides name, email and password.
+---
 
-\* Email must be unique.
+# 7. Exclusiones del MVP
 
-\* Password must be securely stored.
+Las siguientes funcionalidades no forman parte de la primera versión:
 
+- Portal de empleo.
+- Empresas.
+- Publicación de vacantes.
+- Mensajería.
+- Red social.
+- Cursos.
+- Chat.
+- Aplicación móvil.
+- Notificaciones.
+- IA generativa.
 
+---
 
-\---
+# 8. Criterios de aceptación del MVP
 
+El MVP será considerado funcional cuando un usuario pueda:
 
+✅ Crear una cuenta.
 
-\## FR-002 User Authentication
+✅ Iniciar sesión.
 
+✅ Completar su perfil.
 
+✅ Registrar una vacante.
 
-The system shall allow registered users to authenticate using email and password.
+✅ Analizar la vacante.
 
+✅ Obtener un informe.
 
+✅ Consultar su historial.
 
-Acceptance Criteria:
+---
 
+# 9. Evolución del producto
 
+Los requisitos descritos en este documento corresponden únicamente al MVP.
 
-\* Valid credentials return an authentication token.
+Las versiones futuras incorporarán nuevas funcionalidades siguiendo el roadmap oficial del proyecto.
 
-\* Invalid credentials return an error message.
+---
 
+# Principio rector
 
+Cada nueva funcionalidad deberá responder afirmativamente a la siguiente pregunta:
 
-\---
+> **¿Esta característica ayuda al usuario a comprender mejor su perfil profesional y a convertirse en un mejor candidato?**
 
-
-
-\## FR-003 Create Job Application
-
-
-
-The system shall allow users to create job applications.
-
-
-
-Required Fields:
-
-
-
-\* Company Name
-
-\* Position
-
-\* Status
-
-
-
-Optional Fields:
-
-
-
-\* Location
-
-\* Salary Expectation
-
-\* Job URL
-
-\* Notes
-
-
-
-Acceptance Criteria:
-
-
-
-\* Application is associated with the authenticated user.
-
-\* Application is persisted successfully.
-
-
-
-\---
-
-
-
-\## FR-004 View Applications
-
-
-
-The system shall allow users to retrieve all their applications.
-
-
-
-Acceptance Criteria:
-
-
-
-\* Users can only view their own applications.
-
-\* Results are ordered by creation date.
-
-
-
-\---
-
-
-
-\## FR-005 View Application Details
-
-
-
-The system shall allow users to view a specific application.
-
-
-
-Acceptance Criteria:
-
-
-
-\* Application exists.
-
-\* Application belongs to the authenticated user.
-
-
-
-\---
-
-
-
-\## FR-006 Update Application
-
-
-
-The system shall allow users to update application information.
-
-
-
-Editable Fields:
-
-
-
-\* Position
-
-\* Status
-
-\* Location
-
-\* Salary Expectation
-
-\* Notes
-
-\* Job URL
-
-
-
-Acceptance Criteria:
-
-
-
-\* Changes are persisted successfully.
-
-
-
-\---
-
-
-
-\## FR-007 Delete Application
-
-
-
-The system shall allow users to delete an application.
-
-
-
-Acceptance Criteria:
-
-
-
-\* Deleted applications cannot be retrieved afterwards.
-
-
-
-\---
-
-
-
-\## FR-008 Dashboard Summary
-
-
-
-The system shall provide a dashboard summary.
-
-
-
-Dashboard Metrics:
-
-
-
-\* Total Applications
-
-\* Applications In Review
-
-\* Interviews
-
-\* Offers
-
-\* Rejections
-
-\* Hired
-
-
-
-Acceptance Criteria:
-
-
-
-\* Metrics are calculated using user-owned data only.
-
-
-
-\---
-
-
-
-\## FR-009 Search Applications
-
-
-
-The system shall allow users to search applications.
-
-
-
-Searchable Fields:
-
-
-
-\* Company Name
-
-\* Position
-
-
-
-\---
-
-
-
-\## FR-010 Filter Applications
-
-
-
-The system shall allow users to filter applications by status.
-
-
-
-Supported Statuses:
-
-
-
-\* SAVED
-
-\* APPLIED
-
-\* IN\_REVIEW
-
-\* INTERVIEW
-
-\* TECHNICAL\_TEST
-
-\* OFFER
-
-\* REJECTED
-
-\* HIRED
-
-
-
-\---
-
-
-
-\# 4. Business Rules
-
-
-
-\## BR-001
-
-
-
-Each application belongs to exactly one user.
-
-
-
-\## BR-002
-
-
-
-A user can own multiple applications.
-
-
-
-\## BR-003
-
-
-
-Email addresses must be unique.
-
-
-
-\## BR-004
-
-
-
-Users may only access their own data.
-
-
-
-\## BR-005
-
-
-
-Application status must belong to the predefined status catalog.
-
-
-
-\---
-
-
-
-\# 5. Non-Functional Requirements
-
-
-
-\## NFR-001 Security
-
-
-
-The system shall use JWT authentication.
-
-
-
-\---
-
-
-
-\## NFR-002 Performance
-
-
-
-The system shall respond to standard API requests in under 2 seconds under normal load.
-
-
-
-\---
-
-
-
-\## NFR-003 Scalability
-
-
-
-The architecture shall support future feature expansion without requiring major redesign.
-
-
-
-\---
-
-
-
-\## NFR-004 Maintainability
-
-
-
-The codebase shall follow a layered architecture:
-
-
-
-\* Controller
-
-\* Service
-
-\* Repository
-
-
-
-\---
-
-
-
-\## NFR-005 Data Integrity
-
-
-
-All persistent data shall be stored in PostgreSQL.
-
-
-
-\---
-
-
-
-\## NFR-006 API Standards
-
-
-
-The API shall follow RESTful principles.
-
-
-
-\---
-
-
-
-\# 6. Out of Scope
-
-
-
-The following features are intentionally excluded from the MVP:
-
-
-
-\* AI features
-
-\* Resume generation
-
-\* Interview preparation
-
-\* Mobile application
-
-\* Push notifications
-
-\* Email notifications
-
-\* Job board integrations
-
-\* Social login
-
-\* Multi-language support
-
-\* Payment processing
-
-
-
-\---
-
-
-
-\# 7. Future Features
-
-
-
-Planned after MVP validation:
-
-
-
-\* Resume Builder
-
-\* Career Analytics
-
-\* AI Career Assistant
-
-\* Interview Tracker
-
-\* Calendar Integration
-
-\* LinkedIn Integration
-
-\* Premium Subscription
-
-\* Export to PDF
-
-\* Portfolio Builder
-
-
-
-\---
-
-
-
-\# 8. Success Criteria
-
-
-
-The MVP will be considered successful when users can:
-
-
-
-\* Create accounts
-
-\* Manage applications
-
-\* Track application progress
-
-\* Visualize statistics
-
-\* Use CareerTrack without relying on spreadsheets
-
-
-
-\---
-
-
-
-\# 9. MVP Definition
-
-
-
-Version 1.0 includes:
-
-
-
-✓ Authentication
-
-
-
-✓ Job Application CRUD
-
-
-
-✓ Dashboard Metrics
-
-
-
-✓ Search and Filtering
-
-
-
-✓ PostgreSQL Persistence
-
-
-
-✓ JWT Security
-
-
-
-Any additional functionality will be scheduled for future releases.
-
-
-
+Si la respuesta es negativa, la funcionalidad deberá evaluarse para una versión futura.
